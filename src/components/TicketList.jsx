@@ -4,7 +4,7 @@ import TicketCard from './TicketCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import plus from'../assets/plus-solid.svg'
 import ellips_menu from'../assets/ellipsis-solid.svg'
-
+import userIcons from '../constants/userIcons';
 const TicketList = ({ tickets, users, groupBy, sortBy }) => {
   const getPriorityName = (priority) => {
     switch (priority) {
@@ -72,6 +72,7 @@ const TicketList = ({ tickets, users, groupBy, sortBy }) => {
         <div key={group} className="status-column">
            <div className="ticket-header">
             <div>
+            {userIcons[group] && <img src={userIcons[group]} alt={`User ${group} Icon`} className="group-icon" />}
               <span style={{ marginRight: '8px', cursor: 'pointer' }} >{getGroupName(group)}</span>  
               <span>{sortedTickets[group].length}</span>
             </div>

@@ -124,15 +124,23 @@ body {
 }
 
 
-/* src/components/styles.css */
+
 .user-icon {
-  width: 30px; /* Adjust the size of the user icon */
-  height: 30px; /* Adjust the size of the user icon */
-  border-radius: 50%; /* Make the user icon round */
-  object-fit: cover; /* Maintain the aspect ratio and cover the container */
-  margin-right: 10px; /* Add some spacing between the user icon and other elements */
+  width: 30px; 
+  height: 30px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-right: 10px; 
 }
 
+.group-icon {
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-right: 10px; 
+  margin-bottom: -5px;
+}
 .user-status-container {
   display: flex;
   align-items: center;
