@@ -3,20 +3,24 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f5f7;
 }
 
 .app {
   text-align: center;
   margin: 20px;
 }
-
+.arrow {
+  margin-left: 5px; /* Adjust spacing between text and arrow */
+  font-size: 14px; /* Adjust the font size of the arrow */
+}
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #ffffff;
+  border-color: #8f8f8f;
   color: #fff;
-  padding: 10px 20px;
   border-radius: 10px;
 }
 
@@ -29,36 +33,56 @@ body {
   position: relative;
 }
 
-.filter-options button {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.display{
+  margin: 0px 4px 0px 4px ;
 }
 
-.filter-options button:hover {
-  background-color: #45a049;
+.filter-options button {
+  background-color: #ffffff;
+  color: #000;
+  padding: 8px 12px;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  border-color: #1e1d1d;
+  font-size: larger;
 }
+
+
 
 .modal {
   position: absolute;
   top: 60px;
   left: 10px;
-  background-color: #832929;
+  width: 200px;
+  background-color: white;
   padding: 20px;
   border: 1px solid #ddd;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
+  
+}
+.but-label{
+  color: gray;
 }
 
 .modal label,
-.modal select {
+.modal {
   display: block;
   margin-bottom: 10px;
+
+ 
+}
+select{
+  width: 50%;
+  padding: 2px;
+  text-align: left;
 }
 
+option{
+  color: black;
+  
+}
 .modal button {
   background-color: #4caf50;
   color: #131212;
@@ -81,14 +105,15 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100%;
+  margin-left: -13px;
 }
 
 .status-column {
   flex: 1;
   margin: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  background-color: #fff;
+  padding: 10px;
+  /* background-color:; */
 }
 
 .status-column h2 {
@@ -100,30 +125,49 @@ body {
 
 .ticket-card {
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 20px;
   margin: 10px 0;
   padding: 15px;
   width: 100%;
+  position: relative;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  background-color: #e3dbdb;
-  transition: transform 0.3s ease;
+  background-color: #ffffff;
+  /* transition: transform 0.3s ease; */
+}
+
+.card-left-align{
+  margin-left:2%;
+  text-align: left;
 }
 
 .ticket-card:hover {
-  transform: scale(1.05);
-}
+  transform: scale(1.03);
+} 
 
 .ticket-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
+.reqtag{
+  display: flex;
+  align-items: center;
+}
 .ticket-details {
   margin-top: 10px;
 
 }
 
+.prio-tag{
+  margin: 20px 10px 0 0 ;
+  width: 25px;
+  height: 25px;
+}
 
+.ppr{
+  margin-right: 10px;
+}
 
 .user-icon {
   width: 30px; 
@@ -133,6 +177,11 @@ body {
   margin-right: 10px; 
 }
 
+.title{
+  font-weight: bold;
+  font-size: larger;
+
+}
 .group-icon {
   width: 20px; 
   height: 20px; 
@@ -166,4 +215,70 @@ body {
   .status-column {
     flex: 100%;
   }
+}
+
+.title{
+  margin-left: 10px;
+}
+
+.radio-button {
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.radio-button input {
+  display: none;
+}
+
+.radio-button::before {
+  content: '';
+  display: inline-block;
+  width: 20px; /* Fixed width for the circle */
+  height: 20px; /* Fixed height for the circle */
+  border: 2px solid #000; /* Circle border color */
+  border-radius: 50%; /* Make it a circle */
+  margin-right: 8px;
+  overflow: hidden; /* Hide overflow content */
+}
+
+.radio-button.checked::before {
+  background-color: #00ff00; /* Green color for the tick */
+  border-color: #00ff00; /* Green color for the circle border when checked */
+}
+
+.radio-button.checked::before {
+  content: '\2713'; /* Unicode character for checkmark */
+  font-size: 16px; /* Adjust the size of the checkmark */
+  color: #fff; /* Text color of the checkmark (white in this case) */
+  text-align: center;
+  line-height: 20px;
+}
+
+
+.bottom-button {
+  display: flex;
+  align-items: flex-end; /* Align the button content to the bottom */
+  padding: 10px;
+  margin-top: 24px;
+  border-color:rgb(252, 255, 254) ;
+  /* background-color: #f2f6f9;  */
+  /* Button background color */
+  color: gray; /* Button text color */
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  background-color: #000; /* Circle color */
+  border-radius: 50%;
+  margin-right: 10px;
+}
+h3{
+  color: gray;
 }

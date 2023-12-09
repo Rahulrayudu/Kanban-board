@@ -1,7 +1,8 @@
 // src/components/FilterOptions.js
 import React, { useState, useEffect, useRef } from 'react';
 import './styles.css';
-
+import { FaChevronDown } from "react-icons/fa";
+import { IoOptionsOutline } from "react-icons/io5";
 const FilterOptions = ({ onFilterChange }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [options, setOptions] = useState({ groupBy: 'status', sortBy: 'priority' });
@@ -33,16 +34,16 @@ const FilterOptions = ({ onFilterChange }) => {
 
   return (
     <div className="filter-options" ref={modalRef}>
-      <button onClick={() => setModalOpen(!isModalOpen)}>Options</button>
+      <button className='arrow' onClick={() => setModalOpen(!isModalOpen)}> { <IoOptionsOutline />} <span className='display'>Display</span> {<FaChevronDown />} </button>
 
       {isModalOpen && (
         <div className="modal">
-          <h3>Filter Options</h3>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <label style={{ marginRight: '8px' }}>Group By:</label>
+            <label className='but-label' style={{ marginRight: '8px' }}>Group By:</label>
             <select
               onChange={(e) => handleOptionChange('groupBy', e.target.value)}
               value={options.groupBy}
+              className='options'
             >
               <option value="status">Status</option>
               <option value="userId">User ID</option>
@@ -50,8 +51,10 @@ const FilterOptions = ({ onFilterChange }) => {
             </select>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <label>Sort By:</label>
-            <select onChange={(e) => handleOptionChange('sortBy', e.target.value)} value={options.sortBy}>
+            <label className='but-label' >Sort By:</label>
+            <select onChange={(e) => handleOptionChange('sortBy', e.target.value)} 
+            className='options'
+            value={options.sortBy}>
               <option value="priority">Priority</option>
               <option value="title">Title</option>
             </select>

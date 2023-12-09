@@ -93,6 +93,7 @@ const TicketList = ({ tickets, users, groupBy, sortBy }) => {
                 key={ticket.id}
                 ticket={ticket}
                 user={user}
+                groupBy={groupBy}
                 priorityName={priorityName}
               />
             );

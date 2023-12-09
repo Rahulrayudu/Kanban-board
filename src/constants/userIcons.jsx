@@ -13,6 +13,7 @@ import high from '../assets/high.png';
 import turtle from '../assets/turtle.png';
 import snale from '../assets/snail.png';
 import moon from '../assets/moon-solid.svg';
+import prio from '../assets/circle-solid.svg';
 
 const userIcons = {
     'usr-1': one,
@@ -30,6 +31,7 @@ const userIcons = {
     2: turtle,
     1: snale,
     0: moon,
+    prio: prio,
 };
 
 export default userIcons;

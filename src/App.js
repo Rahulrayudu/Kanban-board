@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import TicketList from './components/TicketList';
-import './styles.css';
+import './components/styles.css';
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -27,7 +27,7 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className="">
       <Navbar onFilterChange={handleFilterChange} />
       {data && <TicketList tickets={data.tickets} users={data.users} {...filterOptions} />}
     </div>
