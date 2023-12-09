@@ -27,7 +27,7 @@ const App = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <Navbar onFilterChange={handleFilterChange} />
       {data && <TicketList tickets={data.tickets} users={data.users} {...filterOptions} />}
     </div>

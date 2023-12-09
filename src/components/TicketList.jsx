@@ -73,7 +73,7 @@ const TicketList = ({ tickets, users, groupBy, sortBy }) => {
            <div className="ticket-header">
             <div>
             {userIcons[group] && <img src={userIcons[group]} alt={`User ${group} Icon`} className="group-icon" />}
-              <span style={{ marginRight: '8px', cursor: 'pointer' }} >{getGroupName(group)}</span>  
+              <span style={{ marginRight: '8px', cursor: 'pointer'}} className='group_name' >{getGroupName(group)}</span>  
               <span>{sortedTickets[group].length}</span>
             </div>
             <div>
@@ -85,7 +85,8 @@ const TicketList = ({ tickets, users, groupBy, sortBy }) => {
               </span>
             </div>
             </div>
-          {sortedTickets[group].map((ticket) => {
+            <div className='card-col'>
+            {sortedTickets[group].map((ticket) => {
             const user = users.find((u) => u.id === ticket.userId);
             const priorityName = getPriorityName(ticket.priority);
             return (
@@ -98,6 +99,7 @@ const TicketList = ({ tickets, users, groupBy, sortBy }) => {
               />
             );
           })}
+            </div>
         </div>
       ))}
     </div>
