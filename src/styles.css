@@ -43,3 +43,9 @@ body {
 .modal button:hover {
   background-color: #45a049;
 }
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

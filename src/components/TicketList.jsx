@@ -72,7 +72,6 @@ const TicketList = ({ tickets, users, groupBy, sortBy }) => {
         <div key={group} className="status-column">
            <div className="ticket-header">
             <div>
-              <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" style={{color: "#e0d90b",}} />
               <span style={{ marginRight: '8px', cursor: 'pointer' }} >{getGroupName(group)}</span>  
               <span>{sortedTickets[group].length}</span>
             </div>

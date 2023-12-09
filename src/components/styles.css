@@ -104,8 +104,8 @@ body {
   margin: 10px 0;
   padding: 15px;
   width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #9c3f3f;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  background-color: #e3dbdb;
   transition: transform 0.3s ease;
 }
 
@@ -115,12 +115,43 @@ body {
 
 .ticket-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .ticket-details {
   margin-top: 10px;
+
+}
+
+
+/* src/components/styles.css */
+.user-icon {
+  width: 30px; /* Adjust the size of the user icon */
+  height: 30px; /* Adjust the size of the user icon */
+  border-radius: 50%; /* Make the user icon round */
+  object-fit: cover; /* Maintain the aspect ratio and cover the container */
+  margin-right: 10px; /* Add some spacing between the user icon and other elements */
+}
+
+.user-status-container {
+  display: flex;
+  align-items: center;
+}
+
+.status-circle {
+  width: 9px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-left: -20px;
+}
+
+.available {
+  background-color: green; /* Adjust color for available status */
+}
+
+.unavailable {
+  background-color: red; /* Adjust color for unavailable status */
 }
 
 @media (max-width: 868px) {
