@@ -1,0 +1,129 @@
+/* src/styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  text-align: center;
+  margin: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.left-corner {
+  display: flex;
+  align-items: center;
+}
+
+.filter-options {
+  position: relative;
+}
+
+.filter-options button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-options button:hover {
+  background-color: #45a049;
+}
+
+.modal {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.modal label,
+.modal select {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #45a049;
+}
+
+.center-title {
+  text-align: center;
+  flex: 1;
+}
+
+.ticket-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.status-column {
+  flex: 1;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.status-column h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+}
+
+.ticket-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #9c3f3f;
+  transition: transform 0.3s ease;
+}
+
+.ticket-card:hover {
+  transform: scale(1.05);
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-details {
+  margin-top: 10px;
+}
+
+@media (max-width: 868px) {
+  .status-column {
+    flex: 100%;
+  }
+}
