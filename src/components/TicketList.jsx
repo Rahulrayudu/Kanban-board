@@ -2,6 +2,8 @@
 import React from 'react';
 import TicketCard from './TicketCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import plus from'../assets/plus-solid.svg'
+import ellips_menu from'../assets/ellipsis-solid.svg'
 
 const TicketList = ({ tickets, users, groupBy, sortBy }) => {
   const getPriorityName = (priority) => {
@@ -20,6 +22,14 @@ const TicketList = ({ tickets, users, groupBy, sortBy }) => {
         return 'Unknown Priority';
     }
   };
+  const handlePlusIconClick = () => {
+    console.log('PlusIcon clicked!');
+  };
+
+  const handleMenuEllipsisIconClick = () => {
+    console.log('MenuEllipsisIcon clicked!');
+  }; 
+
 
   const groupedTickets = tickets.reduce((grouped, ticket) => {
     const key = ticket[groupBy];
@@ -60,13 +70,21 @@ const TicketList = ({ tickets, users, groupBy, sortBy }) => {
     <div className="ticket-list">
       {Object.keys(sortedTickets).map((group) => (
         <div key={group} className="status-column">
-          <h2>
-            {/* Render sample icon, group name, '+' icon, and menu icon */}
-            <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" style={{color: "#e0d90b",}} />
-            <span>{getGroupName(group)}</span>
-            <span>{' + '}</span>
-            <span>{'{menu icon}'}</span>
-          </h2>
+           <div className="ticket-header">
+            <div>
+              <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" style={{color: "#e0d90b",}} />
+              <span style={{ marginRight: '8px', cursor: 'pointer' }} >{getGroupName(group)}</span>  
+              <span>{sortedTickets[group].length}</span>
+            </div>
+            <div>
+            <span onClick={handlePlusIconClick}>
+                <img src={plus} alt="Plus Icon" width="20" height="20" style={{ marginRight: '8px', cursor: 'pointer' }} />
+              </span>
+              <span onClick={handleMenuEllipsisIconClick}>
+                <img src={ellips_menu} alt="Menu Icon" width="20" height="20" style={{ cursor: 'pointer' }} />
+              </span>
+            </div>
+            </div>
           {sortedTickets[group].map((ticket) => {
             const user = users.find((u) => u.id === ticket.userId);
             const priorityName = getPriorityName(ticket.priority);

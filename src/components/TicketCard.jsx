@@ -2,6 +2,7 @@
 import React from 'react';
 import './styles.css';
 
+
 const TicketCard = ({ ticket, user }) => {
   const { id, title, tag, userId, status,priority } = ticket;
   const { name, available } = user;
